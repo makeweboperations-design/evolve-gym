@@ -1,0 +1,258 @@
+.evo-buddy-intro {
+  background: #0a0a0a;
+  color: #FFFFFF;
+  padding: 100px 24px;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.evo-buddy-eyebrow {
+  color: #E60000;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  text-shadow: 0 0 10px rgba(230, 0, 0, 0.35);
+}
+
+.evo-buddy-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(36px, 6vw, 56px);
+  text-transform: uppercase;
+  margin: 0 0 14px;
+  color: #E60000;
+  text-shadow: 0 0 16px rgba(230, 0, 0, 0.35), 0 0 40px rgba(230, 0, 0, 0.15);
+}
+
+.evo-buddy-sub {
+  color: #b8b4aa;
+  font-size: 15px;
+  max-width: 480px;
+  margin: 0 auto 40px;
+}
+
+.evo-buddy-howto {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  max-width: 780px;
+  margin: 0 auto 60px;
+}
+
+.evo-buddy-howto-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 220px;
+  text-align: left;
+}
+
+.evo-buddy-howto-num {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #E60000;
+  color: #0a0a0a;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3), -2px -2px 4px rgba(230, 0, 0, 0.3), inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.evo-buddy-howto-step p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #FFFFFF;
+}
+
+.evo-buddy-howto-step strong {
+  color: #E60000;
+}
+
+.evo-buddy-stage {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: 20px 32px;
+  min-height: 360px;
+}
+
+.evo-buddy-mascot-parallax {
+  grid-row: 1 / 5;
+  grid-column: 2;
+}
+
+.evo-buddy-mascot {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #232323 0%, #131313 70%);
+  box-shadow:
+    18px 18px 36px rgba(0, 0, 0, 0.55),
+    -14px -14px 30px rgba(230, 0, 0, 0.05),
+    inset 4px 4px 10px rgba(255, 255, 255, 0.04),
+    inset -6px -6px 14px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: evo-buddy-float 3.2s ease-in-out infinite;
+}
+
+.evo-buddy-mascot-emoji {
+  font-size: 96px;
+  filter: drop-shadow(0 0 24px rgba(230, 0, 0, 0.4));
+}
+
+@keyframes evo-buddy-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-14px); }
+}
+
+.evo-buddy-bubble {
+  background: linear-gradient(155deg, #1e1e1e 0%, #151515 100%);
+  border: none;
+  border-radius: 20px;
+  padding: 16px 20px;
+  text-align: left;
+  max-width: 280px;
+  justify-self: end;
+  box-shadow:
+    10px 10px 22px rgba(0, 0, 0, 0.5),
+    -8px -8px 18px rgba(255, 255, 255, 0.025),
+    inset 1px 1px 2px rgba(255, 255, 255, 0.03);
+}
+
+.evo-buddy-bubble.right {
+  justify-self: start;
+  box-shadow:
+    10px 10px 22px rgba(0, 0, 0, 0.5),
+    -8px -8px 18px rgba(230, 0, 0, 0.04),
+    inset 1px 1px 2px rgba(230, 0, 0, 0.06),
+    0 0 20px rgba(230, 0, 0, 0.08);
+}
+
+.evo-buddy-bubble.left { grid-column: 1; }
+.evo-buddy-bubble.right { grid-column: 3; }
+.evo-buddy-bubble.low { opacity: 0.85; }
+
+.evo-buddy-bubble p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #FFFFFF;
+}
+
+.evo-buddy-bubble-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+}
+
+.evo-buddy-bubble-head strong {
+  font-size: 12.5px;
+  color: #b8b4aa;
+}
+
+.evo-buddy-avatar {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10.5px;
+  font-weight: 700;
+}
+
+.evo-buddy-avatar.user {
+  background: #0a0a0a;
+  color: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.evo-buddy-avatar.bot {
+  background: #E60000;
+  color: #0a0a0a;
+}
+
+.evo-buddy-floating-chat {
+  position: absolute;
+  font-size: 22px;
+  opacity: 0.5;
+  animation: evo-buddy-bob 4s ease-in-out infinite;
+}
+
+.evo-buddy-floating-chat.one {
+  top: 8%;
+  right: 8%;
+  animation-delay: 0.4s;
+}
+
+.evo-buddy-floating-chat.two {
+  bottom: 6%;
+  left: 6%;
+  animation-delay: 1.2s;
+}
+
+@keyframes evo-buddy-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(-6deg); }
+}
+
+.evo-buddy-cta {
+  display: inline-block;
+  margin-top: 50px;
+  color: #0a0a0a;
+  background: #E60000;
+  border: none;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(230, 0, 0, 0.35), 0 0 28px rgba(230, 0, 0, 0.18);
+  transition: box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.evo-buddy-cta:hover {
+  box-shadow: 0 0 18px rgba(230, 0, 0, 0.55), 0 0 40px rgba(230, 0, 0, 0.3);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 760px) {
+  .evo-buddy-stage {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .evo-buddy-mascot-parallax {
+    grid-row: auto;
+    grid-column: 1;
+  }
+  .evo-buddy-mascot {
+    width: 140px;
+    height: 140px;
+  }
+  .evo-buddy-mascot-emoji {
+    font-size: 72px;
+  }
+  .evo-buddy-bubble,
+  .evo-buddy-bubble.left,
+  .evo-buddy-bubble.right {
+    grid-column: 1;
+    justify-self: center;
+    max-width: 320px;
+  }
+}

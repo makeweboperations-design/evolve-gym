@@ -1,0 +1,1088 @@
+
+:root {
+  --bg: #0a0a0a;
+  --bg-raised: #1a1a1a;
+  --bone: #FFFFFF;
+  --bone-dim: #b8b4aa;
+  --forge: #E60000; /* neon lime — glow accent, WTF-style */
+  --forge-soft: rgba(230, 0, 0, 0.35);
+  --steel: #4a5560;
+  --chalk: #8a8f94;
+  --line: rgba(255, 255, 255, 0.1);
+}
+
+/* ---------- Glow utilities ---------- */
+.glow-text {
+  color: var(--forge);
+  text-shadow: 0 0 6px var(--forge-soft), 0 0 18px var(--forge-soft), 0 0 40px rgba(230, 0, 0, 0.18);
+}
+
+.glow-btn {
+  position: relative;
+  background: var(--forge);
+  color: #0a0a0a;
+  box-shadow: 0 0 12px var(--forge-soft), 0 0 28px rgba(230, 0, 0, 0.25), inset 0 0 0 1px rgba(255,255,255,0.15);
+  transition: box-shadow 0.25s ease, transform 0.15s ease, background 0.2s ease;
+}
+.glow-btn:hover {
+  box-shadow: 0 0 18px rgba(230, 0, 0, 0.55), 0 0 46px rgba(230, 0, 0, 0.4), inset 0 0 0 1px rgba(255,255,255,0.25);
+  transform: translateY(-1px);
+}
+.glow-btn:active { transform: translateY(0); }
+
+.glow-border {
+  border: 1px solid rgba(230, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.15), inset 0 0 10px rgba(230, 0, 0, 0.05);
+}
+
+.glow-pulse {
+  animation: glowPulse 2.4s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 10px var(--forge-soft), 0 0 22px rgba(230,0,0,0.2); }
+  50% { box-shadow: 0 0 20px rgba(230,0,0,0.55), 0 0 46px rgba(230,0,0,0.35); }
+}
+
+.gym-landing {
+  background: var(--bg);
+  color: var(--bone);
+  font-family: 'Montserrat', sans-serif;
+  min-height: 100vh;
+}
+
+.gym-landing * {
+  box-sizing: border-box;
+}
+
+.gym-landing h1,
+.gym-landing h2,
+.gym-landing h3,
+.gym-landing .display {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 0.95;
+}
+
+/* Nav */
+/* ---------- Scroll progress bar ---------- */
+.gl-scroll-progress-track {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  z-index: 60;
+  background: transparent;
+  pointer-events: none;
+}
+
+.gl-scroll-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--forge), #FFFFFF);
+  box-shadow: 0 0 8px var(--forge-soft);
+  transition: width 0.1s linear;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-scroll-progress-fill {
+    transition: none;
+  }
+}
+
+.gl-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 6vw;
+  background: rgba(10, 10, 10, 0.88);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, padding 0.25s ease;
+}
+
+.gl-nav.gl-nav-scrolled {
+  border-bottom-color: var(--line);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.gl-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  letter-spacing: 0.03em;
+  transition: letter-spacing 0.2s ease;
+}
+
+.gl-logo:hover {
+  letter-spacing: 0.05em;
+}
+
+.gl-logo span {
+  color: var(--forge);
+  text-shadow: 0 0 8px var(--forge-soft), 0 0 20px rgba(230, 0, 0, 0.3);
+}
+
+.gl-nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.gl-nav-links a {
+  position: relative;
+  color: var(--bone-dim);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-bottom: 3px;
+  transition: color 0.15s ease;
+}
+
+.gl-nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--forge);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.gl-nav-links a:hover,
+.gl-nav-links a:focus-visible {
+  color: var(--bone);
+}
+
+.gl-nav-links a:hover::after,
+.gl-nav-links a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.gl-nav-cta {
+  display: flex;
+  gap: 12px;
+}
+
+.gl-btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 10px 20px;
+  border-radius: 3px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+}
+
+.gl-btn:hover {
+  transform: translateY(-1px);
+}
+
+.gl-btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.gl-btn-pulse {
+  animation: gl-btn-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes gl-btn-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 var(--forge-soft), 0 0 14px var(--forge-soft);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(230, 0, 0, 0), 0 0 34px rgba(230, 0, 0, 0.55);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-btn-pulse {
+    animation: none;
+  }
+}
+
+.gl-btn-primary {
+  background: var(--forge);
+  color: #0a0a0a;
+  box-shadow: 0 0 10px var(--forge-soft), 0 0 24px rgba(230, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.gl-btn-primary:hover {
+  background: #d9ff6b;
+  box-shadow: 0 0 16px rgba(230, 0, 0, 0.6), 0 0 40px rgba(230, 0, 0, 0.4);
+}
+
+/* Cursor-tracked spotlight — position set via --mx/--my custom properties
+   from useMagneticGlow. Fades in only once the mouse is actually over the
+   button (properties are unset otherwise, so the gradient sits at a
+   default off-screen-ish point with 0 opacity until then). */
+.gl-btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(120px circle at var(--mx, 50%) var(--my, 50%), rgba(255, 255, 255, 0.35), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+}
+
+.gl-btn-primary:hover::after {
+  opacity: 1;
+}
+
+/* Same cursor-tracked spotlight trick, applied to cards instead of
+   buttons — a soft lime glow that follows the mouse across the card on
+   hover, layered underneath the card's actual content. */
+.gl-service-card::after,
+.gl-trainer-card::after,
+.gl-price-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(220px circle at var(--mx, 50%) var(--my, 50%), rgba(230, 0, 0, 0.14), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.gl-service-card:hover::after,
+.gl-trainer-card:hover::after,
+.gl-price-card:hover::after {
+  opacity: 1;
+}
+
+/* Hero parallax layer — a plain wrapper (no CSS animation of its own) so
+   the JS-driven scroll parallax transform doesn't fight with the orbs'
+   independent drift keyframe animations underneath it. Composing a
+   parent's transform with a child's own animated transform works fine;
+   setting both on the *same* element from two different sources
+   (inline JS style vs. a CSS animation) would not — the animation
+   would simply win every frame and the JS transform would appear to
+   do nothing. */
+.gl-hero-parallax {
+  position: absolute;
+  inset: 0;
+}
+
+/* A quick RGB-split glitch flicker on hover — a small bit of personality
+   on the wordmark, common in gym/fitness "intensity" branding. */
+.gl-logo:hover {
+  animation: gl-logo-glitch 0.35s steps(2, end);
+}
+
+@keyframes gl-logo-glitch {
+  0% { text-shadow: 0 0 0 transparent; transform: translate(0); }
+  20% { text-shadow: -2px 0 #E60000, 2px 0 #00A3E0; transform: translate(-1px, 1px); }
+  40% { text-shadow: 2px 0 #E60000, -2px 0 #00A3E0; transform: translate(1px, -1px); }
+  60% { text-shadow: -1px 0 #E60000, 1px 0 #00A3E0; transform: translate(-1px, 0); }
+  80% { text-shadow: 1px 0 #E60000, -1px 0 #00A3E0; transform: translate(1px, 0); }
+  100% { text-shadow: 0 0 0 transparent; transform: translate(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-logo:hover {
+    animation: none;
+  }
+}
+
+.gl-btn-ghost {
+  border-color: rgba(230, 0, 0, 0.35);
+  color: var(--bone);
+}
+
+.gl-btn-ghost:hover {
+  border-color: var(--forge);
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.25);
+}
+
+.gl-btn:focus-visible {
+  outline: 2px solid var(--forge);
+  outline-offset: 2px;
+}
+
+/* Hero */
+.gl-hero {
+  position: relative;
+  padding: 14vh 6vw 10vh;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.gl-hero::before {
+  content: '';
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 700px;
+  max-height: 700px;
+  background: radial-gradient(circle, rgba(230, 0, 0, 0.16) 0%, rgba(230, 0, 0, 0.05) 45%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  animation: gl-blob-drift 14s ease-in-out infinite;
+}
+
+.gl-hero > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gl-blob-drift {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-6%, 4%) scale(1.08); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-hero::before {
+    animation: none;
+  }
+}
+
+/* Two extra ambient orbs, layered behind the hero text alongside the
+   existing ::before blob — each drifts at its own size/speed/direction
+   so the background feels alive without being distracting. */
+.gl-hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(2px);
+}
+
+.gl-hero-orb-2 {
+  bottom: -15%;
+  left: -8%;
+  width: 34vw;
+  height: 34vw;
+  max-width: 420px;
+  max-height: 420px;
+  background: radial-gradient(circle, rgba(230, 0, 0, 0.1) 0%, rgba(230, 0, 0, 0.03) 50%, transparent 72%);
+  animation: gl-orb-drift-2 18s ease-in-out infinite;
+}
+
+.gl-hero-orb-3 {
+  top: 30%;
+  left: 38%;
+  width: 22vw;
+  height: 22vw;
+  max-width: 280px;
+  max-height: 280px;
+  background: radial-gradient(circle, rgba(230, 0, 0, 0.09) 0%, transparent 70%);
+  animation: gl-orb-drift-3 11s ease-in-out infinite;
+}
+
+@keyframes gl-orb-drift-2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(5%, -6%) scale(1.12); }
+}
+
+@keyframes gl-orb-drift-3 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-8%, 5%) scale(0.9); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-hero-orb-2,
+  .gl-hero-orb-3 {
+    animation: none;
+  }
+}
+
+/* Cursor trail canvas — sits alongside the orbs (same stacking level,
+   inserted early in the DOM) so the hero text, which comes later in the
+   markup, naturally paints above it without needing an explicit z-index
+   fight. */
+.gl-hero-cursor-trail {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+/* Shimmering gradient sweep on the hero's highlighted word. Compound
+   selector (not just .gl-hero-shimmer alone) is required here — the
+   existing ".gl-hero h1 em" rule below sets a solid color with higher
+   specificity (two type selectors vs. our one class), which would
+   otherwise silently override color: transparent and break the
+   background-clip gradient reveal. */
+.gl-hero h1 em.gl-hero-shimmer {
+  background: linear-gradient(90deg, var(--forge) 0%, #FFFFFF 25%, var(--forge) 50%, #FFFFFF 75%, var(--forge) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+  animation: gl-shimmer-sweep 3.5s linear infinite;
+}
+
+@keyframes gl-shimmer-sweep {
+  to {
+    background-position: -200% center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-hero h1 em.gl-hero-shimmer {
+    animation: none;
+  }
+}
+
+/* Click-burst particles (spawned by useClickBurst, appended to <body>) */
+.gl-click-particle {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  animation: gl-click-particle-fly 0.6s ease-out forwards;
+}
+
+@keyframes gl-click-particle-fly {
+  to {
+    transform: translate(var(--dx), var(--dy)) scale(0);
+    opacity: 0;
+  }
+}
+
+.gl-hero-eyebrow {
+  color: var(--forge);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  text-shadow: 0 0 10px var(--forge-soft);
+}
+
+.gl-hero h1 {
+  font-size: clamp(48px, 9vw, 118px);
+  margin: 0 0 28px;
+  max-width: 15ch;
+}
+
+.gl-hero h1 em {
+  font-style: normal;
+  color: var(--forge);
+  text-shadow: 0 0 14px var(--forge-soft), 0 0 40px rgba(230, 0, 0, 0.25), 0 0 80px rgba(230, 0, 0, 0.12);
+}
+
+.gl-hero-sub {
+  color: var(--bone-dim);
+  font-size: clamp(16px, 2vw, 19px);
+  max-width: 46ch;
+  margin: 0 0 40px;
+  line-height: 1.6;
+}
+
+.gl-hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 72px;
+}
+
+.gl-hero .gl-btn {
+  font-size: 16px;
+  padding: 15px 30px;
+}
+
+/* Stats bar */
+.gl-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.gl-stat {
+  background: var(--bg-raised);
+  padding: 24px 20px;
+}
+
+.gl-stat-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(28px, 3.4vw, 40px);
+  color: var(--forge);
+  display: block;
+}
+
+.gl-stat-label {
+  color: var(--chalk);
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Plate divider - signature element */
+.gl-plate-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 36px 6vw;
+  background: var(--bg);
+}
+
+.gl-plate {
+  border-radius: 50%;
+  border: 3px solid var(--steel);
+  opacity: 0.55;
+  animation: gl-plate-breathe 3.2s ease-in-out infinite;
+}
+
+.gl-plate:nth-child(1) { animation-delay: 0s; }
+.gl-plate:nth-child(2) { animation-delay: 0.15s; }
+.gl-plate:nth-child(3) { animation-delay: 0.3s; }
+.gl-plate:nth-child(4) { animation-delay: 0.45s; }
+.gl-plate:nth-child(5) { animation-delay: 0.3s; }
+.gl-plate:nth-child(6) { animation-delay: 0.15s; }
+.gl-plate:nth-child(7) { animation-delay: 0s; }
+
+@keyframes gl-plate-breathe {
+  0%, 100% {
+    opacity: 0.4;
+    border-color: var(--steel);
+  }
+  50% {
+    opacity: 0.9;
+    border-color: var(--forge);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-plate {
+    animation: none;
+  }
+}
+
+/* Section shell */
+.gl-section {
+  padding: 8vh 6vw;
+  border-bottom: 1px solid var(--line);
+}
+
+.gl-section-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 48px;
+  flex-wrap: wrap;
+}
+
+.gl-section-eyebrow {
+  color: var(--forge);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin: 0 0 10px;
+}
+
+.gl-section-head h2 {
+  font-size: clamp(32px, 4.4vw, 56px);
+  margin: 0;
+}
+
+.gl-section-note {
+  color: var(--chalk);
+  max-width: 34ch;
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Services */
+.gl-services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+
+.gl-service-card {
+  background: var(--bg);
+  padding: 0 0 28px;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.gl-service-card:hover {
+  background: var(--bg-raised);
+}
+
+.gl-service-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.gl-service-icon {
+  display: block;
+  font-size: 26px;
+  margin: 0 28px 10px;
+  filter: drop-shadow(0 0 8px rgba(230, 0, 0, 0.4));
+}
+
+.gl-service-card h3 {
+  font-size: 22px;
+  margin: 0 28px 12px;
+}
+
+.gl-service-card p {
+  color: var(--bone-dim);
+  font-size: 14.5px;
+  line-height: 1.6;
+  margin: 0 28px;
+}
+
+/* Gallery */
+.gl-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 200px;
+  gap: 8px;
+}
+
+.gl-gallery-item {
+  border-radius: 4px;
+  background: linear-gradient(155deg, var(--bg-raised), #26292e);
+  border: 1px solid var(--line);
+  display: flex;
+  align-items: flex-end;
+  padding: 14px;
+  color: var(--chalk);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  position: relative;
+  overflow: hidden;
+}
+
+.gl-gallery-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent 30%, rgba(230, 0, 0, 0.08) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.gl-gallery-item:hover::before {
+  transform: translateX(120%);
+}
+
+.gl-gallery-item.tall {
+  grid-row: span 2;
+}
+
+.gl-gallery-item.wide {
+  grid-column: span 2;
+}
+
+.gl-gallery-item .gl-gallery-image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.gl-gallery-item::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 55%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.gl-gallery-label {
+  position: relative;
+  z-index: 2;
+}
+
+/* Trainers */
+.gl-trainers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 28px;
+}
+
+.gl-trainer-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.gl-trainer-photo {
+  height: 260px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 20%;
+  background: repeating-linear-gradient(135deg, #1a1a1a 0px, #1a1a1a 22px, #161616 22px, #161616 44px);
+}
+
+.gl-trainer-info {
+  padding: 18px 20px;
+}
+
+.gl-trainer-info h3 {
+  font-size: 18px;
+  margin: 0 0 4px;
+}
+
+.gl-trainer-role {
+  color: var(--forge);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+}
+
+.gl-trainer-info p {
+  color: var(--chalk);
+  font-size: 13.5px;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* Pricing */
+.gl-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.gl-price-card {
+  background: var(--bg-raised);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.gl-price-card.featured {
+  border-color: var(--forge);
+  position: relative;
+}
+
+.gl-price-tag {
+  position: absolute;
+  top: -13px;
+  left: 28px;
+  background: var(--forge);
+  color: #0a0a0a;
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.gl-price-card h3 {
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.gl-price-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 44px;
+  color: var(--bone);
+  margin: 12px 0 6px;
+}
+
+.gl-price-amount span {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+  color: var(--chalk);
+  font-weight: 500;
+}
+
+.gl-price-features {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 28px;
+  color: var(--bone-dim);
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.gl-price-features li::before {
+  content: '—';
+  color: var(--forge);
+  margin-right: 8px;
+}
+
+.gl-price-card .gl-btn {
+  margin-top: auto;
+  text-align: center;
+}
+
+/* Location / contact */
+.gl-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.gl-map-embed {
+  width: 100%;
+  min-height: 320px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  filter: grayscale(0.3) contrast(1.05);
+}
+
+.gl-contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gl-contact-row dt {
+  color: var(--forge);
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 4px;
+}
+
+.gl-contact-row dd {
+  margin: 0;
+  color: var(--bone);
+  font-size: 15px;
+}
+
+.gl-social-row {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.gl-social-row a {
+  color: var(--bone-dim);
+  text-decoration: none;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 8px 14px;
+  font-size: 13px;
+  transition: all 0.15s ease;
+}
+
+.gl-social-row a:hover {
+  color: var(--bone);
+  border-color: var(--bone-dim);
+}
+
+/* Footer */
+.gl-footer {
+  padding: 32px 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--chalk);
+  font-size: 13px;
+}
+
+@media (max-width: 860px) {
+  .gl-nav-links {
+    display: none;
+  }
+  .gl-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gl-gallery-item.wide {
+    grid-column: span 2;
+  }
+  .gl-contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .gl-nav {
+    padding: 14px 5vw;
+  }
+  .gl-logo {
+    font-size: 22px;
+  }
+  .gl-nav-cta {
+    gap: 8px;
+  }
+  .gl-nav-cta .gl-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  .gl-hero {
+    padding: 10vh 6vw 8vh;
+  }
+  .gl-hero-actions {
+    flex-direction: column;
+  }
+  .gl-hero-actions .gl-btn {
+    text-align: center;
+  }
+  .gl-gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  .gl-gallery-item.wide,
+  .gl-gallery-item.tall {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-btn {
+    transition: none;
+  }
+}
+
+/* ---------- Hero entrance: staggered fade-up on page load ---------- */
+.gl-hero-eyebrow,
+.gl-hero h1 span,
+.gl-hero-sub,
+.gl-hero-actions,
+.gl-stats {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: gl-fade-up 0.7s ease forwards;
+}
+
+.gl-hero-eyebrow { animation-delay: 0.05s; }
+.gl-hero h1 span:nth-child(1) { animation-delay: 0.15s; }
+.gl-hero h1 span:nth-child(2) { animation-delay: 0.28s; }
+.gl-hero h1 span:nth-child(3) { animation-delay: 0.41s; }
+.gl-hero-sub { animation-delay: 0.55s; }
+.gl-hero-actions { animation-delay: 0.68s; }
+.gl-stats { animation-delay: 0.8s; }
+
+@keyframes gl-fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Scroll reveal (sections below the fold) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---------- Card hover interactions ---------- */
+.gl-service-card {
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+.gl-service-card:hover {
+  transform: translateY(-4px);
+}
+
+.gl-trainer-card {
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  position: relative;
+}
+.gl-trainer-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--forge);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+.gl-trainer-photo {
+  transition: transform 0.4s ease;
+}
+.gl-trainer-card:hover .gl-trainer-photo {
+  transform: scale(1.04);
+}
+.gl-trainer-card {
+  overflow: hidden;
+}
+
+.gl-price-card {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  will-change: transform;
+  position: relative;
+}
+.gl-price-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--forge);
+}
+.gl-price-card.featured {
+  box-shadow: 0 0 0 1px var(--forge), 0 16px 36px rgba(230, 0, 0, 0.08);
+}
+.gl-price-card.featured:hover {
+  box-shadow: 0 0 0 1px var(--forge), 0 20px 44px rgba(230, 0, 0, 0.14);
+}
+
+.gl-gallery-item {
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  cursor: default;
+}
+.gl-gallery-item:hover {
+  transform: translateY(-3px);
+  border-color: var(--forge);
+  color: var(--bone-dim);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gl-hero-eyebrow,
+  .gl-hero h1 span,
+  .gl-hero-sub,
+  .gl-hero-actions,
+  .gl-stats {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .gl-service-card,
+  .gl-trainer-card,
+  .gl-trainer-photo,
+  .gl-price-card,
+  .gl-gallery-item {
+    transition: none;
+  }
+}

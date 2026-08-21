@@ -1,0 +1,27 @@
+.split-text {
+  display: inline-block;
+}
+
+.split-text-mask {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: top;
+}
+
+.split-text-word {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+.split-text-word.in {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .split-text-word {
+    transform: none;
+    transition: none;
+  }
+}

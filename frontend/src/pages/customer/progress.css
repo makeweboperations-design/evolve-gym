@@ -1,0 +1,1275 @@
+.progress-page {
+  max-width: 720px;
+  color: var(--dash-text);
+}
+
+.progress-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 26px;
+  text-transform: uppercase;
+  margin: 0 0 4px;
+}
+
+.progress-sub {
+  color: var(--dash-text-muted);
+  font-size: 14px;
+  margin: 0 0 20px;
+}
+
+.progress-summary {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.progress-summary-stat {
+  min-width: 120px;
+}
+
+.progress-empty-today {
+  font-size: 13.5px;
+  color: var(--dash-text-muted);
+  margin: 0;
+}
+
+.progress-streak {
+  background: linear-gradient(135deg, rgba(230, 0, 0, 0.12), rgba(230, 0, 0, 0.04));
+  border: 1px solid rgba(230, 0, 0, 0.4);
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  margin-bottom: 16px;
+  color: var(--dash-text);
+}
+
+.progress-streak strong {
+  color: #4a7c1f;
+}
+
+.progress-view-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.progress-view-toggle button {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border-strong);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  color: var(--dash-text);
+}
+
+.progress-view-toggle button:hover {
+  border-color: #E60000;
+}
+
+.progress-view-toggle button.active {
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border-color: var(--dash-text);
+}
+
+.progress-week-card {
+  background: var(--dash-panel-bg);
+  border: 1px solid rgba(230, 0, 0, 0.4);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+}
+
+.progress-week-card h3 {
+  font-size: 14px;
+  margin: 0 0 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #4a7c1f;
+}
+
+.progress-week-card .progress-summary {
+  margin-bottom: 14px;
+}
+
+.progress-month-heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--dash-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 10px;
+}
+
+.progress-summary-stat {
+  flex: 1;
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+  padding: 16px;
+  text-align: center;
+}
+
+.progress-summary-value {
+  display: block;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--dash-text);
+}
+
+.progress-summary-label {
+  display: block;
+  font-size: 12px;
+  color: #8a8f94;
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.progress-calendar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 14px;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+.progress-chart-card {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.progress-chart-card h3 {
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.progress-chart-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 640px) {
+  .progress-chart-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.progress-calendar-nav button {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border-strong);
+  border-radius: 6px;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.progress-calendar-nav button:hover {
+  border-color: #E60000;
+}
+
+.progress-error {
+  color: #c0392b;
+  font-size: 13.5px;
+}
+
+.progress-success {
+  color: #2e7d32;
+  font-size: 13.5px;
+}
+
+.progress-calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.progress-weekday {
+  text-align: center;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #8a8f94;
+  text-transform: uppercase;
+  padding-bottom: 6px;
+}
+
+.progress-day {
+  aspect-ratio: 1;
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.progress-day.empty {
+  visibility: hidden;
+  border: none;
+  cursor: default;
+}
+
+.progress-day:hover {
+  border-color: #E60000;
+}
+
+.progress-day.today {
+  border-color: var(--dash-text);
+  font-weight: 700;
+}
+
+.progress-day.selected {
+  background: #1a1a1a;
+  border-color: var(--dash-text);
+  color: #FFFFFF;
+}
+
+.progress-day.logged:not(.selected) {
+  background: rgba(230, 0, 0, 0.15);
+  border-color: rgba(230, 0, 0, 0.5);
+}
+
+.progress-day-weight {
+  font-size: 10px;
+  font-weight: 700;
+  color: #4a7c1f;
+}
+
+.progress-day.selected .progress-day-weight {
+  color: #E60000;
+}
+
+.progress-day-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #E60000;
+}
+
+.progress-detail {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 20px 24px;
+}
+
+.progress-detail h3 {
+  font-size: 16px;
+  margin: 0 0 16px;
+}
+
+.progress-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.progress-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.progress-field label {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dash-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.progress-field input,
+.progress-field textarea {
+  border: 1px solid var(--dash-border-strong);
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.progress-field input:focus-visible,
+.progress-field textarea:focus-visible {
+  outline: none;
+  border-color: #E60000;
+}
+
+.progress-photo-preview {
+  max-height: 140px;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  align-self: flex-start;
+}
+
+.progress-photo-btn {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  background: none;
+  border: 1px solid var(--dash-border-strong);
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.progress-photo-btn:hover {
+  border-color: #E60000;
+}
+
+.progress-section-divider {
+  height: 1px;
+  background: var(--dash-border);
+  margin: 4px 0;
+}
+
+.progress-form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.progress-save-btn {
+  background: #E60000;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.progress-save-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.progress-delete-btn {
+  background: none;
+  border: 1px solid #e0a0a0;
+  color: #c0392b;
+  border-radius: 6px;
+  padding: 11px 20px;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+/* --- Quick-log shortcut on the Today card --- */
+
+.progress-quicklog-btn {
+  margin-top: 10px;
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 9px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.progress-quicklog-btn:hover {
+  background: #2b2b2b;
+}
+
+/* --- Goal card --- */
+
+.progress-goal-card {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.progress-goal-summary-head,
+.progress-goal-form-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.progress-goal-summary-head h3,
+.progress-goal-form-head h3 {
+  font-size: 15px;
+  margin: 0;
+  color: var(--dash-text);
+}
+
+.progress-goal-form-head p {
+  font-size: 13px;
+  color: var(--dash-text-muted);
+  margin: 4px 0 0;
+}
+
+.progress-goal-summary-actions {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.progress-goal-summary-actions button {
+  background: transparent;
+  border: 1px solid var(--dash-border-strong);
+  border-radius: 6px;
+  padding: 5px 12px;
+  font-size: 12.5px;
+  cursor: pointer;
+  color: var(--dash-text-muted);
+}
+
+.progress-goal-summary-actions button:hover {
+  border-color: #E60000;
+  color: var(--dash-text);
+}
+
+.progress-goal-bar-track {
+  width: 100%;
+  height: 12px;
+  background: #f0efeb;
+  border-radius: 999px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-goal-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #E60000, #4a7c1f);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.progress-goal-bar-fill.off-track {
+  background: linear-gradient(90deg, #fca5a5, #dc2626);
+}
+
+.progress-goal-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 13px;
+  color: var(--dash-text-muted);
+}
+
+.progress-goal-stats strong {
+  color: var(--dash-text);
+  font-size: 14px;
+}
+
+.progress-goal-hint {
+  font-size: 13px;
+  color: var(--dash-text-muted);
+  margin: 0;
+}
+
+.progress-goal-form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.progress-goal-form-row label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--dash-text-muted);
+}
+
+.progress-goal-form-row input,
+.progress-goal-form-row select {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong);
+  font-size: 13.5px;
+  font-family: inherit;
+}
+
+.progress-goal-form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+/* --- Celebration toast (streak milestones, new PRs) --- */
+
+@keyframes progress-celebration-in {
+  from { transform: translateY(-12px) scale(0.96); opacity: 0; }
+  to { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.progress-celebration-toast {
+  background: linear-gradient(135deg, #E60000, #9ee620);
+  color: var(--dash-text);
+  font-weight: 700;
+  font-size: 14.5px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(230, 0, 0, 0.35);
+  animation: progress-celebration-in 0.35s ease;
+}
+
+/* --- BMI + Personal records mini-cards --- */
+
+.progress-mini-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.progress-mini-card {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.progress-mini-card h4 {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--dash-text-muted);
+  margin: 0 0 10px;
+}
+
+.progress-mini-card-value {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  color: var(--dash-text);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.progress-mini-card-sub {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #4a7c1f;
+  margin-top: 4px;
+}
+
+.progress-mini-card-footnote {
+  font-size: 12px;
+  color: var(--dash-text-faint);
+  margin-top: 6px;
+}
+
+.progress-records-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progress-records-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13.5px;
+  color: var(--dash-text-muted);
+}
+
+.progress-records-list strong {
+  color: var(--dash-text);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 0.01em;
+}
+
+/* --- Weight trend pace insight --- */
+
+.progress-pace-insight {
+  margin: 10px 0 0;
+  font-size: 13px;
+  color: #4a7c1f;
+  font-weight: 600;
+  background: rgba(230, 0, 0, 0.1);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+/* --- Consistency heatmap --- */
+
+.progress-heatmap-card {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+}
+
+.progress-heatmap-card h4 {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--dash-text-muted);
+  margin: 0 0 12px;
+}
+
+.progress-heatmap-grid {
+  display: flex;
+  gap: 3px;
+  width: fit-content;
+}
+
+.progress-heatmap-col {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.progress-heatmap-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: var(--dash-hover-bg);
+}
+
+.progress-heatmap-cell.logged {
+  background: #4a7c1f;
+}
+
+.progress-heatmap-cell.today {
+  box-shadow: 0 0 0 1.5px #1a1a1a;
+}
+
+.progress-heatmap-cell.out-of-range {
+  background: transparent;
+}
+
+.progress-heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 10px;
+  font-size: 11px;
+  color: var(--dash-text-faint);
+}
+
+.progress-heatmap-legend .progress-heatmap-cell {
+  width: 10px;
+  height: 10px;
+}
+
+/* --- Heatmap upgrades: interactive cells, months, day labels --- */
+
+.progress-heatmap-scroll {
+  overflow-x: auto;
+}
+
+.progress-heatmap-months {
+  display: flex;
+  gap: 3px;
+  margin-left: 30px;
+  margin-bottom: 4px;
+}
+
+.progress-heatmap-month-label {
+  width: 11px;
+  font-size: 10px;
+  color: var(--dash-text-faint);
+  flex-shrink: 0;
+}
+
+.progress-heatmap-body {
+  display: flex;
+  gap: 6px;
+}
+
+.progress-heatmap-daylabels {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1px 0;
+  width: 24px;
+  flex-shrink: 0;
+}
+
+.progress-heatmap-daylabels span {
+  font-size: 9.5px;
+  color: var(--dash-text-faint);
+  height: 11px;
+  line-height: 11px;
+}
+
+.progress-heatmap-cell {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: var(--dash-hover-bg);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.12s ease;
+}
+
+.progress-heatmap-cell:hover:not(:disabled) {
+  transform: scale(1.4);
+  z-index: 3;
+}
+
+.progress-heatmap-cell:disabled {
+  cursor: default;
+}
+
+.progress-heatmap-cell.level-0 { background: var(--dash-hover-bg); }
+.progress-heatmap-cell.level-1 { background: #c9f2a3; }
+.progress-heatmap-cell.level-2 { background: #8fd85a; }
+.progress-heatmap-cell.level-3 { background: #5cae2e; }
+.progress-heatmap-cell.level-4 { background: #33701a; }
+
+.progress-heatmap-cell.today {
+  box-shadow: 0 0 0 1.5px #1a1a1a;
+}
+
+.progress-heatmap-cell.out-of-range {
+  background: transparent;
+  visibility: hidden;
+}
+
+.progress-heatmap-tooltip {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #FFFFFF;
+  font-size: 11px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease;
+  z-index: 5;
+}
+
+.progress-heatmap-cell:hover .progress-heatmap-tooltip {
+  opacity: 1;
+}
+
+/* --- Water intake tracker --- */
+
+.progress-water-card {
+  background: var(--dash-panel-bg);
+  border: 1px solid var(--dash-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.progress-water-visual {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  width: 90px;
+}
+
+.progress-water-info {
+  flex: 1;
+  min-width: 220px;
+}
+
+.progress-water-info h4 {
+  font-size: 14px;
+  margin: 0 0 10px;
+  color: var(--dash-text);
+}
+
+.progress-water-amount {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  color: var(--dash-text);
+  margin-bottom: 4px;
+}
+
+.progress-water-amount span {
+  font-family: inherit;
+  font-size: 13px;
+  color: var(--dash-text-muted);
+  font-weight: 400;
+}
+
+.progress-water-percent {
+  font-size: 12.5px;
+  color: #0288d1;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.progress-water-quickadd {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.progress-water-quickadd button {
+  background: #e6f4ff;
+  border: 1px solid #b8e0ff;
+  color: #0369a1;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.progress-water-quickadd button:hover {
+  background: #d0ecff;
+}
+
+.progress-water-quickadd button.progress-water-undo {
+  background: #f4f2ec;
+  border-color: #e4e2dc;
+  color: #6b7280;
+}
+
+.progress-water-custom {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.progress-water-custom input {
+  flex: 1;
+  max-width: 160px;
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong);
+  font-size: 13px;
+}
+
+.progress-water-custom button {
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.progress-water-edit-goal {
+  background: none;
+  border: none;
+  color: #6b7280;
+  font-size: 12.5px;
+  text-decoration: underline;
+  cursor: pointer;
+  padding: 0;
+}
+
+.progress-water-goal-form {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.progress-water-goal-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dash-text-muted);
+}
+
+.progress-water-goal-form input {
+  padding: 6px 9px;
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong);
+  font-size: 13px;
+  width: 100px;
+}
+
+.progress-water-goal-form-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.progress-water-goal-form-actions button {
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong);
+  padding: 6px 12px;
+  font-size: 12.5px;
+  cursor: pointer;
+  background: var(--dash-panel-bg);
+}
+
+.progress-water-goal-form-actions button[type='submit'] {
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border-color: var(--dash-text);
+  font-weight: 700;
+}
+
+/* The bottle itself */
+
+.water-bottle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+}
+
+.water-bottle.just-added {
+  animation: water-bottle-pop 0.5s ease;
+}
+
+@keyframes water-bottle-pop {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.08) rotate(-2deg); }
+  60% { transform: scale(1.05) rotate(2deg); }
+  100% { transform: scale(1); }
+}
+
+.water-bottle-cap {
+  width: 16px;
+  height: 6px;
+  background: #64b5f6;
+  border-radius: 2px 2px 0 0;
+}
+
+.water-bottle-neck {
+  width: 26px;
+  height: 12px;
+  background: #eaf6ff;
+  border: 2px solid #90caf9;
+  border-bottom: none;
+}
+
+.water-bottle-body {
+  position: relative;
+  width: 74px;
+  height: 130px;
+  background: #eaf6ff;
+  border: 2.5px solid #90caf9;
+  border-top: none;
+  border-radius: 0 0 16px 16px;
+  overflow: hidden;
+}
+
+.water-bottle-fill {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(180deg, #4fc3f7 0%, #0288d1 100%);
+  transition: height 0.7s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.water-bottle-wave {
+  position: absolute;
+  top: -5px;
+  left: -30%;
+  width: 160%;
+  height: 10px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.55) 0%, transparent 72%);
+  animation: water-wave-drift 2.6s ease-in-out infinite;
+}
+
+@keyframes water-wave-drift {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .water-bottle-wave {
+    animation: none;
+  }
+  .water-bottle.just-added {
+    animation: none;
+  }
+}
+
+/* --- Water intake history --- */
+
+.progress-water-history {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--dash-border);
+}
+
+.progress-water-history-bars {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  height: 70px;
+}
+
+.progress-water-history-bar-wrap {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 4px;
+}
+
+.progress-water-history-bar {
+  width: 100%;
+  max-width: 16px;
+  background: linear-gradient(180deg, #4fc3f7, #0288d1);
+  border-radius: 3px 3px 0 0;
+  transition: height 0.4s ease;
+}
+
+.progress-water-history-bar-wrap span {
+  font-size: 9.5px;
+  color: var(--dash-text-faint);
+}
+
+/* --- Daily completion ring (replaces the old mood check-in) --- */
+
+.progress-daily-ring-wrap {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 14px;
+  flex-wrap: wrap;
+}
+
+.progress-daily-ring {
+  width: 96px;
+  height: 96px;
+  flex-shrink: 0;
+  transform: rotate(-90deg);
+}
+
+.progress-daily-ring-track {
+  fill: none;
+  stroke: var(--dash-border, #e4e2dc);
+  stroke-width: 8;
+}
+
+.progress-daily-ring-fill {
+  fill: none;
+  stroke: #4a7c1f;
+  stroke-width: 8;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.progress-daily-ring-num,
+.progress-daily-ring-caption {
+  transform: rotate(90deg);
+  transform-origin: 50px 50px;
+  fill: var(--dash-text, #1a1a1a);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 17px;
+}
+
+.progress-daily-ring-caption {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8px;
+  fill: var(--dash-text-faint, #9ca3af);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.progress-daily-ring-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12.5px;
+  color: var(--dash-text-faint, #9ca3af);
+}
+
+.progress-daily-ring-checklist .done {
+  color: #4a7c1f;
+  font-weight: 600;
+}
+
+/* --- Achievements / badges --- */
+
+.progress-badges-card {
+  background: var(--dash-panel-bg, #fff);
+  border: 1px solid var(--dash-border, #e4e2dc);
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin-bottom: 20px;
+}
+
+.progress-badges-card h4 {
+  font-size: 12.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: var(--dash-text-muted, #6b6b6b);
+  margin: 0 0 14px;
+}
+
+.progress-badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 12px;
+}
+
+.progress-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 8px;
+  border-radius: 10px;
+  text-align: center;
+  background: var(--dash-hover-bg, #f4f2ec);
+  transition: transform 0.15s ease;
+}
+
+.progress-badge:hover {
+  transform: translateY(-2px);
+}
+
+.progress-badge.unlocked {
+  background: linear-gradient(160deg, rgba(230, 0, 0, 0.2), rgba(230, 0, 0, 0.05));
+  box-shadow: 0 0 0 1px rgba(74, 124, 31, 0.3);
+}
+
+.progress-badge.locked {
+  opacity: 0.5;
+}
+
+.progress-badge-emoji {
+  font-size: 26px;
+}
+
+.progress-badge-label {
+  font-size: 10.5px;
+  font-weight: 700;
+  color: var(--dash-text, #1a1a1a);
+  line-height: 1.3;
+}
+
+/* --- Main tab switcher (Tracker / Achievements) --- */
+
+.progress-main-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.progress-main-tabs button {
+  background: var(--dash-panel-bg, #fff);
+  border: 1px solid var(--dash-border-strong, #d8d5cd);
+  border-radius: 999px;
+  padding: 8px 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  color: var(--dash-text-muted, #6b6b6b);
+}
+
+.progress-main-tabs button.active {
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border-color: #1a1a1a;
+}
+
+.dash[data-theme='dark'] .progress-main-tabs button.active {
+  background: #E60000;
+  color: #0a0a0a;
+  border-color: #E60000;
+}
+
+/* --- Body measurements input grid --- */
+
+.progress-measurements-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.progress-measurements-grid input {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong, #d8d5cd);
+  background: var(--dash-input-bg, #fff);
+  color: var(--dash-text, #1a1a1a);
+  font-size: 13px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .progress-measurements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* --- BMI height edit form --- */
+
+.progress-height-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.progress-height-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--dash-text-muted, #4b5563);
+}
+
+.progress-height-form input {
+  padding: 7px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong, #d8d5cd);
+  background: var(--dash-input-bg, #fff);
+  color: var(--dash-text, #1a1a1a);
+  font-size: 13.5px;
+}
+
+.progress-height-form-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.progress-height-form-actions button {
+  border-radius: 6px;
+  border: 1px solid var(--dash-border-strong, #d8d5cd);
+  padding: 6px 12px;
+  font-size: 12.5px;
+  cursor: pointer;
+  background: var(--dash-panel-bg, #fff);
+  color: var(--dash-text, #1a1a1a);
+}
+
+.progress-height-form-actions button[type='submit'] {
+  background: #1a1a1a;
+  color: #FFFFFF;
+  border-color: #1a1a1a;
+  font-weight: 700;
+}

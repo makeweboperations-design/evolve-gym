@@ -1,0 +1,44 @@
+.pixelate-wrap {
+  width: 100%;
+  overflow: hidden;
+  display: block;
+  position: relative;
+}
+
+.pixelate-wrap canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Placeholder shown until a real photo is dropped into the matching
+   assets path — diagonal brand stripes rather than a blank/broken box. */
+.pixelate-placeholder {
+  aspect-ratio: 4 / 3;
+  background:
+    repeating-linear-gradient(
+      135deg,
+      #1a1a1a 0px, #1a1a1a 22px,
+      #161616 22px, #161616 44px
+    );
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pixelate-placeholder-mark {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 15px;
+  letter-spacing: 4px;
+  color: rgba(255, 255, 255, 0.18);
+  border: 1.5px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

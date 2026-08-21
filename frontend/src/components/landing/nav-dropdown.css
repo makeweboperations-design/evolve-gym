@@ -1,0 +1,95 @@
+.nav-dropdown {
+  position: relative;
+  list-style: none;
+}
+
+.nav-dropdown-trigger {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  padding: 0;
+}
+
+.nav-dropdown-caret {
+  font-size: 10px;
+  transition: transform 0.15s ease;
+  color: #E60000;
+}
+
+.nav-dropdown[aria-expanded="true"] .nav-dropdown-caret,
+.nav-dropdown:hover .nav-dropdown-caret {
+  transform: rotate(180deg);
+}
+
+.nav-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  border: 1px solid rgba(230, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+  min-width: 200px;
+  padding: 8px;
+  margin-top: 16px;
+  list-style: none;
+  z-index: 60;
+  animation: nav-dropdown-in 0.15s ease;
+}
+
+.nav-dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -16px;
+  left: 0;
+  right: 0;
+  height: 16px;
+  /* Invisible bridge so moving the mouse from the trigger down into the
+     menu never leaves the <li>'s hoverable area (which is what was
+     closing the dropdown before you could click an item). */
+}
+
+@keyframes nav-dropdown-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.nav-dropdown-menu li {
+  list-style: none;
+}
+
+.nav-dropdown-menu a {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 13.5px;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav-dropdown-menu a:hover {
+  background: rgba(230, 0, 0, 0.1);
+  color: #E60000;
+}
+
+@media (max-width: 900px) {
+  .nav-dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+    padding: 4px 0 4px 14px;
+  }
+  @keyframes nav-dropdown-in {
+    from { opacity: 1; }
+    to { opacity: 1; }
+  }
+}

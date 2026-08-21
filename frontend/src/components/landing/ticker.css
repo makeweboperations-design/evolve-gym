@@ -1,0 +1,47 @@
+.gl-ticker {
+  overflow: hidden;
+  background: #111;
+  border-top: 1px solid rgba(230, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(230, 0, 0, 0.15);
+  padding: 14px 0;
+  white-space: nowrap;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+
+.gl-ticker-track {
+  display: inline-flex;
+  align-items: center;
+  animation: gl-ticker-scroll 28s linear infinite;
+  will-change: transform;
+}
+
+.gl-ticker:hover .gl-ticker-track {
+  animation-play-state: paused;
+}
+
+@keyframes gl-ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.gl-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  padding: 0 28px;
+}
+
+.gl-ticker-icon {
+  font-size: 16px;
+  filter: drop-shadow(0 0 6px rgba(230, 0, 0, 0.5));
+}
+
+.gl-ticker-dot {
+  margin-left: 28px;
+  color: #E60000;
+  text-shadow: 0 0 8px rgba(230, 0, 0, 0.6);
+}

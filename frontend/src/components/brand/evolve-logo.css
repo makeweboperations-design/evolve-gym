@@ -1,0 +1,65 @@
+.evolve-logo {
+  display: inline-flex;
+  flex-direction: column;
+  line-height: 1;
+  user-select: none;
+}
+
+.evolve-wordmark {
+  height: 34px;
+  width: auto;
+  overflow: visible;
+}
+
+.evolve-wordmark-text {
+  font-family: 'Bebas Neue', 'Anton', sans-serif;
+  font-size: 52px;
+  letter-spacing: 1px;
+  fill: #E60000;
+}
+
+.evolve-logo--dark .evolve-wordmark-text {
+  fill: #1A1A1A;
+}
+
+.evolve-o-red {
+  fill: #E60000;
+}
+
+.evolve-wordmark-swoosh {
+  stroke: #00A3E0;
+}
+
+.evolve-sub {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 6px;
+  color: #FFFFFF;
+  margin-top: -2px;
+  padding-left: 2px;
+}
+
+.evolve-logo--dark .evolve-sub {
+  color: #1A1A1A;
+}
+
+.evolve-sub--compact {
+  font-size: 10px;
+  letter-spacing: 5px;
+}
+
+.evolve-tagline {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #5C5C5C;
+  margin-top: 3px;
+  padding-left: 2px;
+}
+
+.evolve-mark {
+  height: 32px;
+  width: 32px;
+}

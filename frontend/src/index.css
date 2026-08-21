@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  min-height: 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+body {
+  background: #0a0a0a;
+}
+
+/* ---------------------------------------------------------------------
+   Global micro-animation for form fields ("placeholders"): a subtle lift
+   on hover, and a soft glow pulse on focus. Applies everywhere a plain
+   <input>/<textarea> is used — auth forms, profile, community composer,
+   progress tracker, BMI calculator, chatbot input — without needing to
+   touch each component's CSS individually.
+--------------------------------------------------------------------- */
+input:not([type="checkbox"]):not([type="radio"]),
+textarea {
+  transition: transform 0.15s ease, box-shadow 0.2s ease, border-color 0.15s ease;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):hover,
+textarea:hover {
+  transform: translateY(-1px);
+}
+
+input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+textarea:focus-visible {
+  animation: field-focus-glow 0.5s ease;
+}
+
+@keyframes field-focus-glow {
+  0% { box-shadow: 0 0 0 0 rgba(230, 0, 0, 0.35); }
+  100% { box-shadow: 0 0 0 6px rgba(230, 0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  input:not([type="checkbox"]):not([type="radio"]),
+  textarea {
+    transition: none;
+  }
+  input:not([type="checkbox"]):not([type="radio"]):hover,
+  textarea:hover {
+    transform: none;
+  }
+  input:not([type="checkbox"]):not([type="radio"]):focus-visible,
+  textarea:focus-visible {
+    animation: none;
+  }
+}

@@ -1,0 +1,70 @@
+.checklist-items {
+  list-style: none;
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.checklist-items li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 13.5px;
+}
+
+.checklist-items li label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.checklist-items li.done span {
+  text-decoration: line-through;
+  color: #8a8f94;
+}
+
+.checklist-items li button {
+  background: none;
+  border: none;
+  color: #8a8f94;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0 4px;
+}
+
+.checklist-items li button:hover {
+  color: #c0392b;
+}
+
+.checklist-add {
+  display: flex;
+  gap: 8px;
+}
+
+.checklist-add input {
+  flex: 1;
+  border: 1px solid #d8d5cd;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font-size: 13px;
+}
+
+.checklist-add button {
+  background: #E60000;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.checklist-add button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

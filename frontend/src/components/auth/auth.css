@@ -1,0 +1,232 @@
+
+.auth-page {
+  min-height: 100vh;
+  background: #0a0a0a;
+  color: #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 40px 36px;
+}
+
+.auth-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.auth-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 30px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  color: #FFFFFF;
+  display: inline-block;
+}
+
+.auth-logo span {
+  color: #E60000;
+  text-shadow: 0 0 8px rgba(230, 0, 0, 0.4), 0 0 20px rgba(230, 0, 0, 0.2);
+}
+
+.auth-skip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+  padding: 6px 12px;
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #b8b4aa;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.auth-skip:hover {
+  color: #E60000;
+  border-color: rgba(230, 0, 0, 0.5);
+  box-shadow: 0 0 12px rgba(230, 0, 0, 0.2);
+}
+
+.auth-card h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  margin: 0 0 6px;
+}
+
+.auth-subtitle {
+  color: #8a8f94;
+  font-size: 14.5px;
+  margin: 0 0 28px;
+  line-height: 1.5;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-field label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #b8b4aa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.auth-field input {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  padding: 12px 14px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-family: 'Montserrat', sans-serif;
+  transition: border-color 0.15s ease;
+}
+
+.password-field-wrap {
+  position: relative;
+  display: flex;
+}
+
+.password-field-wrap input {
+  flex: 1;
+  padding-right: 60px !important;
+}
+
+.password-toggle {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: #8a8f94;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color 0.15s ease;
+}
+
+.password-toggle:hover {
+  color: #E60000;
+}
+
+.auth-field input::placeholder {
+  color: #5c6167;
+}
+
+.auth-field input:focus-visible {
+  outline: none;
+  border-color: #E60000;
+}
+
+.auth-error {
+  background: rgba(230, 0, 0, 0.1);
+  border: 1px solid rgba(230, 0, 0, 0.35);
+  color: #d9ff6b;
+  font-size: 13.5px;
+  padding: 10px 14px;
+  border-radius: 4px;
+  margin: 0 0 4px;
+}
+
+.auth-submit {
+  margin-top: 6px;
+  background: #E60000;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 4px;
+  padding: 14px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.35), 0 0 26px rgba(230, 0, 0, 0.18);
+  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.auth-submit:hover {
+  background: #d9ff6b;
+  transform: translateY(-1px);
+  box-shadow: 0 0 16px rgba(230, 0, 0, 0.55), 0 0 40px rgba(230, 0, 0, 0.3);
+}
+
+.auth-submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.auth-submit:focus-visible {
+  outline: 2px solid #E60000;
+  outline-offset: 2px;
+}
+
+.auth-footer-note {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 14px;
+  color: #8a8f94;
+}
+
+.auth-footer-note a {
+  color: #E60000;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer-note a:hover {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .auth-submit {
+    transition: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .auth-card {
+    padding: 28px 22px;
+  }
+  .auth-card h1 {
+    font-size: 26px;
+  }
+  .auth-logo {
+    font-size: 24px;
+  }
+  .auth-skip {
+    font-size: 10.5px;
+    padding: 5px 10px;
+  }
+}

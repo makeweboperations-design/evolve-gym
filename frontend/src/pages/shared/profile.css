@@ -1,0 +1,143 @@
+.profile-page {
+  max-width: 560px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.profile-loading {
+  color: #8a8f94;
+  padding: 40px 0;
+}
+
+.profile-card {
+  background: #1a1a1a;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 26px;
+}
+
+.profile-card h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 22px;
+  text-transform: uppercase;
+  margin: 0 0 18px;
+  color: #FFFFFF;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.profile-field label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #b8b4aa;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.profile-photo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.profile-photo-preview {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #0a0a0a;
+  border: 1px solid rgba(230, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+  color: #E60000;
+  font-weight: 700;
+  font-size: 22px;
+}
+
+.profile-photo-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-photo-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  padding: 4px 0;
+  font-size: 13px;
+  font-weight: 600;
+  color: #E60000;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.15s ease;
+}
+
+.profile-photo-upload-btn:hover {
+  opacity: 0.8;
+}
+
+.profile-field input {
+  background: #0a0a0a;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 4px;
+  padding: 11px 14px;
+  color: #FFFFFF;
+  font-size: 14.5px;
+}
+
+.profile-field input:focus-visible {
+  outline: none;
+  border-color: #E60000;
+}
+
+.profile-success {
+  color: #E60000;
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.profile-error {
+  color: #ff8a8a;
+  font-size: 13.5px;
+  margin: 0;
+}
+
+.profile-submit {
+  align-self: flex-start;
+  background: #E60000;
+  color: #0a0a0a;
+  border: none;
+  border-radius: 6px;
+  padding: 11px 24px;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(230, 0, 0, 0.3);
+  transition: background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.profile-submit:hover {
+  background: #d9ff6b;
+  box-shadow: 0 0 16px rgba(230, 0, 0, 0.5);
+}
+
+.profile-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

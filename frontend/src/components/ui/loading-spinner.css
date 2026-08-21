@@ -1,0 +1,36 @@
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px 0;
+  color: #8a8f94;
+}
+
+.loading-spinner-dumbbell {
+  display: inline-block;
+  font-size: 32px;
+  filter: drop-shadow(0 0 10px rgba(230, 0, 0, 0.35));
+  animation: loading-dumbbell-spin 1.1s ease-in-out infinite;
+}
+
+@keyframes loading-dumbbell-spin {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(-18deg) scale(1.05); }
+  50%  { transform: rotate(0deg) scale(1); }
+  75%  { transform: rotate(18deg) scale(1.05); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+
+.loading-spinner-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loading-spinner-dumbbell {
+    animation: none;
+  }
+}
