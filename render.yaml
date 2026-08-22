@@ -14,6 +14,10 @@ services:
         value: 5000
       - key: DATABASE_URL
         sync: false   # paste your Supabase connection string in the Render dashboard
+      - key: SUPABASE_URL
+        sync: false   # Supabase dashboard -> Project Settings -> API Keys -> Project URL
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false   # same page -> "service_role" secret key (NOT anon/public)
       - key: JWT_ACCESS_SECRET
         generateValue: true
       - key: JWT_REFRESH_SECRET

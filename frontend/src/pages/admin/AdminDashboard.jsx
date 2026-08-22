@@ -8,10 +8,12 @@ import AdminChatbot from './AdminChatbot.jsx';
 import Community from '../shared/Community.jsx';
 import Profile from '../shared/Profile.jsx';
 import EquipmentManager from '../shared/EquipmentManager.jsx';
+import ReceptionistRenewals from '../receptionist/ReceptionistRenewals.jsx';
 
 const NAV_ITEMS = [
   { to: '/admin', label: 'Overview', end: true },
   { to: '/admin/plans', label: 'Membership plans' },
+  { to: '/admin/renewals', label: 'Renewals' },
   { to: '/admin/users', label: 'Staff & members' },
   { to: '/admin/equipment', label: 'Equipment' },
   { to: '/admin/chatbot', label: 'Chatbot FAQs' },
@@ -25,6 +27,7 @@ export default function AdminDashboard() {
       <Routes>
         <Route index element={<AdminOverview />} />
         <Route path="plans" element={<AdminPlans />} />
+        <Route path="renewals" element={<ReceptionistRenewals />} />
         <Route path="users" element={<AdminUsers />} />
         <Route path="equipment" element={<EquipmentManager />} />
         <Route path="chatbot" element={<AdminChatbot />} />
