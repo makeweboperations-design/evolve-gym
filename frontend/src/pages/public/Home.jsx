@@ -94,10 +94,10 @@ const GALLERY_ITEMS = [
 ];
 
 const TRAINERS = [
-  { name: 'Santanu Saha', role: 'Head Coach', bio: 'Brings 15 years of experience in strength training and rehabilitation.', photoUrl: '' },
-  { name: 'Ajay Ghosh', role: 'Head Strength Coach', bio: '10 years coaching powerlifting and general strength — specializes in injury-safe programming.', photoUrl: '' },
-  { name: 'Priya Banerjee', role: 'Group Fitness Lead', bio: 'Runs HIIT and conditioning classes built around measurable weekly progress.', photoUrl: '' },
-  { name: 'Bhaskar Moitra', role: 'Nutrition & Diet Coach', bio: 'Certified sports nutritionist focused on sustainable, culturally realistic meal plans.', photoUrl: '' },
+  { name: 'Trainer 1', role: 'Head Coach', bio: 'Brings 15 years of experience in strength training and rehabilitation.', photoUrl: '' },
+  { name: 'Trainer 2', role: 'Head Strength Coach', bio: '10 years coaching powerlifting and general strength — specializes in injury-safe programming.', photoUrl: '' },
+  { name: 'Trainer 3', role: 'Group Fitness Lead', bio: 'Runs HIIT and conditioning classes built around measurable weekly progress.', photoUrl: '' },
+  { name: 'Trainer 4', role: 'Nutrition & Diet Coach', bio: 'Certified sports nutritionist focused on sustainable, culturally realistic meal plans.', photoUrl: '' },
 ];
 
 const PLANS = [
