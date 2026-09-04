@@ -338,7 +338,7 @@ export default function Home() {
             </div>
             <div className="gl-contact-row">
               <dt>Phone</dt>
-              <dd>82401 22675 &bull; 79809 70816 &bull; 83359 50652</dd>
+              <dd>82401 XXXX &bull; 79809 XXXX &bull; 83359 XXXX</dd>
             </div>
             <div className="gl-contact-row">
               <dt>Email</dt>
